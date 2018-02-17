@@ -29,9 +29,9 @@ FROM flexberry/servicebuseditor
 
 MAINTAINER mail@flexberry.net
 
-RUN 	rm -rf /var/www/vhosts/ServiceBusEditor/*
+RUN	rm -rf /var/www/vhosts/ServiceBusEditor/*
 
-COPY --from=backend /Flexberry/NewPlatform.Flexberry.ServiceBus.Editor/bin/Release /var/www/vhosts/ServiceBusEditor
+COPY --from=backend /Flexberry/NewPlatform.Flexberry.ServiceBus.Editor/ODataBackend /var/www/vhosts/ServiceBusEditor
 COPY --from=ember_app /Flexberry/flexberry-service-bus-editor/dist /var/www/vhosts/ServiceBusEditor
 
 RUN 	rm /var/www/vhosts/ServiceBusEditor/bin/Mono.Security.dll ; \
