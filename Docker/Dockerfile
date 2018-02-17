@@ -8,7 +8,7 @@ RUN	echo TAG=$TAG ; \
 	git clone --depth=50 --branch=$TAG https://github.com/Flexberry/flexberry-service-bus-editor.git /Flexberry/flexberry-service-bus-editor ; \
 	cd /Flexberry/flexberry-service-bus-editor ; \
 	yarn install ; \
-	bower install ; \
+	bower install  --allow-root ; \
 	ember build
 
 
