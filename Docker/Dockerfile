@@ -5,7 +5,7 @@ RUN	echo TAG=$TAG ; \
 	node --version ; npm --version ; \
 	yarn global add ember-cli@2.4.3 ; \
 	yarn global add bower ; \
-	git clone --depth=50 --branch=$TAG https://github.com/Flexberry/flexberry-service-bus-editor.git /Flexberry/flexberry-service-bus-editor ; \
+	git clone --depth=50 --branch=docker-release https://github.com/Flexberry/flexberry-service-bus-editor.git /Flexberry/flexberry-service-bus-editor ; \
 	cd /Flexberry/flexberry-service-bus-editor ; \
 	yarn install ; \
 	bower install  --allow-root ; \
