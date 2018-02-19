@@ -35,4 +35,5 @@ COPY --from=backend /Flexberry/NewPlatform.Flexberry.ServiceBus.Editor/ODataBack
 COPY --from=ember_app /Flexberry/flexberry-service-bus-editor/dist /var/www/vhosts/ServiceBusEditor
 
 RUN 	rm /var/www/vhosts/ServiceBusEditor/bin/Mono.Security.dll ; \
-	rm /var/www/vhosts/ServiceBusEditor/Web.config
+	rm /var/www/vhosts/ServiceBusEditor/Web.config ; \
+	mv /var/www/vhosts/ServiceBusEditor/Web.Docker.config /var/www/vhosts/ServiceBusEditor/Web.config
