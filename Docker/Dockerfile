@@ -34,6 +34,14 @@ RUN	rm -rf /var/www/vhosts/ServiceBusEditor/*
 COPY --from=backend /Flexberry/NewPlatform.Flexberry.ServiceBus.Editor/ODataBackend /var/www/vhosts/ServiceBusEditor
 COPY --from=ember_app /Flexberry/flexberry-service-bus-editor/dist /var/www/vhosts/ServiceBusEditor
 
-RUN 	rm /var/www/vhosts/ServiceBusEditor/bin/Mono.Security.dll ; \
+RUN 	rm -f /var/www/vhosts/ServiceBusEditor/bin/Mono.Security.dll ; \
+	rm -f /var/www/vhosts/ServiceBusEditor/Global.asax.cs ; \
+	rm -f /var/www/vhosts/ServiceBusEditor/NewPlatform.Flexberry.ServiceBus.Editor.ODataBackend.csproj ; \
+	rm -f /var/www/vhosts/ServiceBusEditor/Web.Debug.config ; \
+	rm -f /var/www/vhosts/ServiceBusEditor/Web.Release.config ; \
+	rm -f /var/www/vhosts/ServiceBusEditor/packages.config ; \
+	rm -fr /var/www/vhosts/ServiceBusEditor/App_Start ; \
+	rm -fr /var/www/vhosts/ServiceBusEditor/Properties ; \
+	rm -fr /var/www/vhosts/ServiceBusEditor/obj ; \
 	rm /var/www/vhosts/ServiceBusEditor/Web.config ; \
 	mv /var/www/vhosts/ServiceBusEditor/Web.Docker.config /var/www/vhosts/ServiceBusEditor/Web.config
