@@ -9,7 +9,7 @@ RUN	echo TAG=$TAG ; \
 	cd /Flexberry/flexberry-service-bus-editor ; \
 	yarn install ; \
 	bower install  --allow-root ; \
-	ember build
+	ember build --environment=docker
 
 
 FROM mono:latest as backend
