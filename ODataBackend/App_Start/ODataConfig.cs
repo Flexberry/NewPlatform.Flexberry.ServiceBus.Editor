@@ -20,6 +20,7 @@
     using NewPlatform.Flexberry.ORM.ODataService.Model;
     using NewPlatform.Flexberry.Security;
     using NewPlatform.Flexberry.Services;
+    using ICSSoft.STORMNET.Business.Audit.Objects;
 
     /// <summary>
     /// Configure OData Service.
@@ -56,8 +57,10 @@
                 typeof(ApplicationLog).Assembly,
                 typeof(UserSetting).Assembly,
                 typeof(FlexberryUserSetting).Assembly,
-                typeof(Lock).Assembly
-			};
+                typeof(Lock).Assembly,
+                typeof(Agent).Assembly,
+                typeof(AuditEntity).Assembly
+            };
             var builder = new DefaultDataObjectEdmModelBuilder(assemblies);
             builder.PropertyFilter = PropertyFilter;
 
@@ -104,9 +107,9 @@
 
         private static bool Login(string login, string password)
         {
-            IUserManager userManager = UnityFactory.GetContainer().Resolve<IUserManager>();
+            IAgentManager userManager = UnityFactory.GetContainer().Resolve<IAgentManager>();
 
-            if (userManager.IsUserExist(login, password))
+            if (userManager.IsUserExist(login, null, password))
             {
                 FormsAuthentication.SetAuthCookie(login, true);
                 return true;
