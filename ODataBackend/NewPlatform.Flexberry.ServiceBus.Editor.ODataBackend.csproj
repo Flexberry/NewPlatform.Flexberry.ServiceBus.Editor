@@ -111,6 +111,9 @@
     <Reference Include="NewPlatform.Flexberry.Caching, Version=1.0.0.0, Culture=neutral, PublicKeyToken=43b437d0302b56ae, processorArchitecture=MSIL">
       <HintPath>..\packages\NewPlatform.Flexberry.Caching.1.0.0-beta02\lib\net45\NewPlatform.Flexberry.Caching.dll</HintPath>
     </Reference>
+    <Reference Include="NewPlatform.Flexberry.LockService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=90cf813b4f0caf3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NewPlatform.Flexberry.LockService.1.0.0\lib\net45\NewPlatform.Flexberry.LockService.dll</HintPath>
+    </Reference>
     <Reference Include="NewPlatform.Flexberry.ORM.ODataService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=11027c24ff789609, processorArchitecture=MSIL">
       <HintPath>..\packages\NewPlatform.Flexberry.ORM.ODataService.2.0.1-alpha15\lib\net45\NewPlatform.Flexberry.ORM.ODataService.dll</HintPath>
     </Reference>
@@ -124,7 +127,7 @@
       <HintPath>..\packages\NewPlatform.Flexberry.Security.2.0.0-beta07\lib\net45\NewPlatform.Flexberry.Security.Objects.dll</HintPath>
     </Reference>
     <Reference Include="NewPlatform.Flexberry.ServiceBus.Objects, Version=1.0.0.1, Culture=neutral, PublicKeyToken=764bfb9e3976ec9a, processorArchitecture=MSIL">
-      <HintPath>..\packages\NewPlatform.Flexberry.ServiceBus.Objects.1.0.0-beta02\lib\net45\NewPlatform.Flexberry.ServiceBus.Objects.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ServiceBus.Objects.1.0.0-beta03\lib\net45\NewPlatform.Flexberry.ServiceBus.Objects.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Cors">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
@@ -152,12 +155,6 @@
     </Reference>
     <Reference Include="System.Web.Http.Cors">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
-    </Reference>
-    <Reference Include="NewPlatform.Flexberry.LockService">
-      <HintPath>..\packages\NewPlatform.Flexberry.LockService.1.0.0-alpha03\lib\net45\NewPlatform.Flexberry.LockService.dll</HintPath>
-    </Reference>
-    <Reference Include="UserSettingsService">
-      <HintPath>..\packages\NewPlatform.Flexberry.UserSettingsService.1.1.0\lib\net35\UserSettingsService.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http.WebHost">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
@@ -252,6 +249,9 @@
     </Reference>
     <Reference Include="System.EnterpriseServices">
       <HintPath>System.EnterpriseServices</HintPath>
+    </Reference>
+    <Reference Include="UserSettingsService, Version=1.1.0.0, Culture=neutral, PublicKeyToken=2169f05da5d7fddc, processorArchitecture=MSIL">
+      <HintPath>..\packages\NewPlatform.Flexberry.UserSettingsService.2.0.0\lib\net35\UserSettingsService.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
