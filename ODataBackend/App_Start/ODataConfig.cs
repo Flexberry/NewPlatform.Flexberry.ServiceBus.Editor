@@ -44,8 +44,8 @@
                 throw new ArgumentNullException(nameof(container));
             }
 
-            // Enable CORS with SupportsCredentials
-            config.EnableCors(new DynamicCorsPolicyProvider(true));
+            // Enable CORS with SupportsCredentials, uncomment it when debugging
+            // config.EnableCors(new DynamicCorsPolicyProvider(true));
 
             // Use Unity as WebAPI dependency resolver
             config.DependencyResolver = new UnityDependencyResolver(container);
