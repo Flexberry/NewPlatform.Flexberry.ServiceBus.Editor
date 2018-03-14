@@ -25,11 +25,9 @@ RUN	echo TAG=$TAG ; \
 	nuget restore NewPlatform.Flexberry.ServiceBus.Editor.sln ; \
 	msbuild /p:Configuration=Release NewPlatform.Flexberry.ServiceBus.Editor.sln
 
-FROM flexberry/servicebuseditor
+FROM flexberry/alt.p8-apache2-mono:latest
 
 MAINTAINER mail@flexberry.net
-
-RUN	rm -rf /var/www/vhosts/ServiceBusEditor/*
 
 COPY --from=backend /Flexberry/NewPlatform.Flexberry.ServiceBus.Editor/ODataBackend /var/www/vhosts/ServiceBusEditor
 COPY --from=ember_app /Flexberry/flexberry-service-bus-editor/dist /var/www/vhosts/ServiceBusEditor
