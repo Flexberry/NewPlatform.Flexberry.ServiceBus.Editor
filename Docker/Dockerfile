@@ -31,6 +31,7 @@ MAINTAINER mail@flexberry.net
 
 COPY --from=backend /Flexberry/NewPlatform.Flexberry.ServiceBus.Editor/ODataBackend /var/www/vhosts/ServiceBusEditor
 COPY --from=ember_app /Flexberry/flexberry-service-bus-editor/dist /var/www/vhosts/ServiceBusEditor
+COPY vhosts.conf /conf
 
 RUN 	rm -f /var/www/vhosts/ServiceBusEditor/bin/Mono.Security.dll ; \
 	rm -f /var/www/vhosts/ServiceBusEditor/Global.asax.cs ; \
