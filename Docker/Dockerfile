@@ -3,6 +3,7 @@ FROM node:6.13 as ember_app
 ARG TAG
 RUN	echo TAG=$TAG ; \
 	node --version ; npm --version ; \
+	npm install -g yarnpkg ; yarn --version ; \
 	yarn global add ember-cli@2.4.3 ; \
 	yarn global add bower ; \
 	git clone --depth=50 --branch=docker-release https://github.com/Flexberry/flexberry-service-bus-editor.git /Flexberry/flexberry-service-bus-editor ; \
