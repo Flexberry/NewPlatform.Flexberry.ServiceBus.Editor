@@ -126,7 +126,10 @@
       <HintPath>..\packages\NewPlatform.Flexberry.Security.2.0.0-beta07\lib\net45\NewPlatform.Flexberry.Security.Objects.dll</HintPath>
     </Reference>
     <Reference Include="NewPlatform.Flexberry.ServiceBus.Objects, Version=1.0.0.1, Culture=neutral, PublicKeyToken=764bfb9e3976ec9a, processorArchitecture=MSIL">
-      <HintPath>..\packages\NewPlatform.Flexberry.ServiceBus.Objects.1.0.1\lib\net45\NewPlatform.Flexberry.ServiceBus.Objects.dll</HintPath>
+      <HintPath>..\packages\NewPlatform.Flexberry.ServiceBus.Objects.1.1.0\lib\net45\NewPlatform.Flexberry.ServiceBus.Objects.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=3.0.8.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.3.0.8\lib\net45\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Cors">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
@@ -163,12 +166,6 @@
     </Reference>
     <Reference Include="LogService">
       <HintPath>..\packages\NewPlatform.Flexberry.LogService.1.1.0\lib\net45\LogService.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Security">
-      <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Mono.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Npgsql">
-      <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="Remotion.Linq">
       <HintPath>..\packages\Remotion.Linq.1.13.183.0\lib\net35\Remotion.Linq.dll</HintPath>
