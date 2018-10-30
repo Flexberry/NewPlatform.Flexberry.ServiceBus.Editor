@@ -6,7 +6,7 @@
 
     using ICSSoft.STORMNET.Business;
 
-    using Microsoft.Practices.Unity;
+    using Unity;
     using Microsoft.Practices.Unity.Configuration;
 
     public class Global : HttpApplication

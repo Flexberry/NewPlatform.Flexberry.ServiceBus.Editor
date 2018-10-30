@@ -9,18 +9,18 @@
     using ICSSoft.Services;
     using ICSSoft.STORMNET;
     using ICSSoft.STORMNET.Security;
+    using ICSSoft.STORMNET.Business.Audit.Objects;
     using IIS.Caseberry.Logging.Objects;
-
-    using Microsoft.Practices.Unity;
 
     using NewPlatform.Flexberry;
     using NewPlatform.Flexberry.AspNet.WebApi.Cors;
-    using NewPlatform.Flexberry.ORM.ODataService;
     using NewPlatform.Flexberry.ORM.ODataService.Extensions;
     using NewPlatform.Flexberry.ORM.ODataService.Model;
     using NewPlatform.Flexberry.Security;
     using NewPlatform.Flexberry.Services;
-    using ICSSoft.STORMNET.Business.Audit.Objects;
+
+    using Unity;
+    using Unity.AspNet.WebApi;
 
     /// <summary>
     /// Configure OData Service.
