@@ -1,11 +1,9 @@
-FROM repository.flexberry.org/gitlab-ci/ember-cli:2.4.3-node-10 as ember_app
+FROM node:10.24.1 AS ember_app
 
 ARG TAG
-
-ENV PATH="/root/.nvm/versions/node/v10.24.1/bin:$PATH"
-
 RUN	echo TAG=$TAG ; \
 	node --version ; npm --version ; yarn --version ; \
+	npm install -g ember-cli@2.4.3 bower ; \
 	git clone --depth=50 --branch=docker-release https://github.com/Flexberry/flexberry-service-bus-editor.git /Flexberry/flexberry-service-bus-editor ; \
 	cd /Flexberry/flexberry-service-bus-editor ; \
 	yarn install --allow-root ; \
@@ -13,7 +11,7 @@ RUN	echo TAG=$TAG ; \
 	ember build --environment=docker
 
 
-FROM mono:latest as backend
+FROM mono:latest AS backend
 
 ARG TAG
 RUN	echo TAG=$TAG ; \
