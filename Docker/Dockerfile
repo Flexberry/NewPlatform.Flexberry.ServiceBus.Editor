@@ -1,24 +1,25 @@
-FROM node:6.13 as ember_app
+FROM node:10.24.1 AS ember_app
 
 ARG TAG
 RUN	echo TAG=$TAG ; \
-	node --version ; npm --version ; \
-	npm install g yarn ; yarn --version ; \
-	yarn global add ember-cli@2.4.3 ; \
-	yarn global add bower ; \
+	node --version ; npm --version ; yarn --version ; \
+	npm install -g ember-cli@2.4.3 bower ; \
 	git clone --depth=50 --branch=docker-release https://github.com/Flexberry/flexberry-service-bus-editor.git /Flexberry/flexberry-service-bus-editor ; \
 	cd /Flexberry/flexberry-service-bus-editor ; \
-	yarn install ; \
+	yarn install --allow-root ; \
 	bower install  --allow-root ; \
 	ember build --environment=docker
 
 
-FROM mono:latest as backend
+FROM mono:latest AS backend
 
 ARG TAG
 RUN	echo TAG=$TAG ; \
 	mono --version ; \
-    apt update ; \
+	sed -i 's|deb.debian.org|archive.debian.org|g' /etc/apt/sources.list ; \
+	sed -i 's|security.debian.org|archive.debian.org|g' /etc/apt/sources.list ; \
+	sed -i '/stretch-updates/d' /etc/apt/sources.list ; \
+	apt update ; \
 	apt install -y git ; \
 	git clone --depth=50 --branch=$TAG https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Editor.git /Flexberry/NewPlatform.Flexberry.ServiceBus.Editor ; \
 	msbuild /version ; \
@@ -34,7 +35,7 @@ COPY --from=backend /Flexberry/NewPlatform.Flexberry.ServiceBus.Editor/ODataBack
 COPY --from=ember_app /Flexberry/flexberry-service-bus-editor/dist /var/www/vhosts/ServiceBusEditor
 COPY vhosts.conf /conf
 
-RUN 	rm -f /var/www/vhosts/ServiceBusEditor/bin/Mono.Security.dll ; \
+RUN rm -f /var/www/vhosts/ServiceBusEditor/bin/Mono.Security.dll ; \
 	rm -f /var/www/vhosts/ServiceBusEditor/Global.asax.cs ; \
 	rm -f /var/www/vhosts/ServiceBusEditor/NewPlatform.Flexberry.ServiceBus.Editor.ODataBackend.csproj ; \
 	rm -f /var/www/vhosts/ServiceBusEditor/Web.Debug.config ; \
